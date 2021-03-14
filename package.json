@@ -1,0 +1,19 @@
+{
+  "name": "rosterfilter",
+  "version": "1.0.0",
+  "description": "sweetwater was here",
+  "main": "server.js",
+  "dependencies": {
+    "consolidate": "^0.15.1",
+    "express": "^4.16.4",
+    "handlebars": "^4.7.7",
+    "superagent": "^4.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Josh Edson (https://github.com/uaon)",
+  "license": "MIT"
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sweetwaters API2HTML</title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="style/bootstrap.min.css" />
+    <!-- Bootstrap theme -->
+    <link href="style/bootstrap-theme.min.css" rel="stylesheet" />
+    <!-- tablefilterjs theme -->
+    <link href="style/tablefilter.css" rel="stylesheet" />
+    <!-- custom css -->
+    <link href="style/table.css" rel="stylesheet" />
+    <!-- tablefilter js -->
+    <script src="js/tablefilter.js"></script>
+  </head>
+  <body lang="en">
+    <table id="demo">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Rank</th>
+          <th>Join Date</th>
+          <th>Promotion Date</th>
+          <th>Positions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each profiles}}
+        <tr>
+          <td>{{user.username}}</td>
+          <td>{{rank.rankShort}}</td>
+          <td>{{joinDate}}</td>
+          <td>{{promotionDate}}</td>
+          <td>
+            <div class="primary">{{primary.positionTitle}}</div>
+            {{#each secondaries}}
+            <div class="secondary">{{positionTitle}}</div>
+            {{/each}}
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <script>
+      var filtersConfig = {
+        base_path: "js/",
+        auto_filter: {
+          delay: 1100, //milliseconds
+        },
+        filters_row_index: 1,
+        state: true,
+        alternate_rows: true,
+        rows_counter: true,
+        btn_reset: true,
+        status_bar: true,
+        msg_filter: "Filtering...",
+      };
+      var tf = new TableFilter("demo", filtersConfig);
+      tf.init();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+.secondary {
+  background-color: tomato;
+  color: white;
+  border: 1px solid black;
+}
+.primary {
+  background-color: rgb(23, 76, 252);
+  color: white;
+  border: 1px solid black;
+}
