@@ -1,4 +1,3 @@
-
 var express = require('express');
 var superagent = require('superagent');
 var consolidate = require('consolidate');
@@ -35,4 +34,3 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(3000);
-console.log('started on port 3000');
