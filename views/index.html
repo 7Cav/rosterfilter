@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Sweetwaters API2HTML</title>
+    <title>7th Cavalry ADR</title>
+    <link rel="icon" href="style/themes/7cav/favicon.ico" type="image/x-icon">
     <meta name="description" content="" />
     <meta name="author" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,49 +19,70 @@
     <script src="js/tablefilter.js"></script>
   </head>
   <body lang="en">
-    <table id="demo">
-      <thead>
-        <tr>
-          <th>Username</th>
-          <th>Rank</th>
-          <th>Join Date</th>
-          <th>Promotion Date</th>
-          <th>Positions</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each profiles}}
-        <tr>
-          <td>{{user.username}}</td>
-          <td>{{rank.rankShort}}</td>
-          <td>{{joinDate}}</td>
-          <td>{{promotionDate}}</td>
-          <td>
-            <div class="primary">{{primary.positionTitle}}</div>
-            {{#each secondaries}}
-            <div class="secondary">{{positionTitle}}</div>
-            {{/each}}
-          </td>
-        </tr>
-        {{/each}}
-      </tbody>
-    </table>
+    <div class = "p-nav-primary">
+      <div class = "p-nav-wrapper">
+        <nav class = "p-nav">
+          <div class = "p-nav-inner">
+            <div class = "p-nav-scroller">
+            <div class = "p-nav-logo">
+              <a href="https://7cav.us">
+                <img class = "p-nav-png" src = "style/themes/7cav/logo-m.png" hover="Return to the main website" width="" height="">
+              </a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class = "container">
+      <table id="demo">
+        <thead>
+         <tr>
+           <th>Username </th>
+           <th>Rank</th>
+           <th>Positions </th>
+         </tr>
+       </thead>
+        <tbody>
+         {{#each profiles}}
+         <tr>
+            <td>{{user.username}}</td>
+           <td>{{rank.rankShort}}</td>
+            <td>
+             <div class="primary">{{primary.positionTitle}}</div>
+             {{#each secondaries}}
+              <div class="secondary">{{positionTitle}}</div>
+              {{/each}}
+           </td>
+         </tr>
+         {{/each}}
+        </tbody>
+      </table>
+    </div>
+    <style>
+      body {
+        background-image: url('style/themes/7cav/page-bg2.png');
+      }
+    </style>
     <script>
       var filtersConfig = {
-        base_path: "js/",
+        col_1: 'none',
+        base_path: "",
         auto_filter: {
           delay: 1100, //milliseconds
         },
         filters_row_index: 1,
         state: true,
+        popup_filters: true,
         alternate_rows: true,
-        rows_counter: true,
+        rows_counter: false,
         btn_reset: true,
         status_bar: true,
         msg_filter: "Filtering...",
       };
+
       var tf = new TableFilter("demo", filtersConfig);
       tf.init();
+
     </script>
   </body>
 </html>
