@@ -75,6 +75,11 @@ body {
   z-index: 400;
 }
 
+.p-nav{
+  display: block;
+  overflow-wrap: break-word;
+}
+
 .p-nav-logo {
   align-self: center;
   box-sizing: border-box;
@@ -87,11 +92,28 @@ body {
 .p-nav-inner {
   margin-left: 294.5px;
   margin-right: 294.5px;
+  max-width: 1300px;
+}
+
+.p-nav-scroller{
+display: flex;
 }
 
 .p-nav-png{
   width:220px;
   height:37.7167px;
+  flex: 1 1 auto;
+}
+
+.p-nav-opposite{
+  text-align: right;
+  flex: 1 1 auto;
+  margin: 5px
+}
+
+.p-nav-opposite-link{
+  color:#f1f1f1;
+  font-weight: bold;
 }
 
 [tabindex="-1"]:focus {
@@ -184,13 +206,12 @@ sup {
 }
 
 a {
-  color: #007bff;
+  color: #f1f1f1;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #0056b3;
   text-decoration: underline;
 }
 
