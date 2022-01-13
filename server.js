@@ -12,13 +12,6 @@ app.use(express.static(__dirname + '/public'));
 var keys = require('./keys/credentials');
 var api_key = keys.cred_key;
 
-//grpc changes
-const client = new packageObject.Service(serviceAddress, grpc.credentials.createInsecure(), {
-  "grpc.max_receive_message_length": 1024 * 1024 * 100,
-  "grpc.max_send_message_length": 1024 * 1024 * 100
-});
-//end of grpc changes
-
 app.get('/', function(req, res, next) {
   superagent.get('https://api.7cav.us/api/v1/roster/ROSTER_TYPE_COMBAT')
   .set({ 'Authorization': api_key, Accept: 'application/json' })
