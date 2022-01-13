@@ -13,7 +13,10 @@ var keys = require('./keys/credentials');
 var api_key = keys.cred_key;
 
 //grpc changes
-var server = new grpc.Server({'grpc.max_receive_message_length': 1024*1024*1024})
+const client = new packageObject.Service(serviceAddress, grpc.credentials.createInsecure(), {
+  "grpc.max_receive_message_length": 1024 * 1024 * 100,
+  "grpc.max_send_message_length": 1024 * 1024 * 100
+});
 //end of grpc changes
 
 app.get('/', function(req, res, next) {
